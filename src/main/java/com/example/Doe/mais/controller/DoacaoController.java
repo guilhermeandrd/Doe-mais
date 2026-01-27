@@ -17,6 +17,9 @@ public class DoacaoController {
     @Autowired
     private DoacaoRepository repository;
 
+    public void saveDoaco(){}
+
+
     @GetMapping
     public List<DoacaoResponseDTO> getAll(){
         List<DoacaoResponseDTO> doacaoList = repository.findAll().stream().map(DoacaoResponseDTO::new).toList();
