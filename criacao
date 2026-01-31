@@ -1,6 +1,38 @@
+DROP TABLE IF EXISTS 
+Ficha_Anamnese, Exame, Internacao, Leito, Materiais_Insumos, Medicamento, 
+Consulta, Alerta, Mensagens, Horarios_plantao, Medico, 
+Profissionais_enfermagem, Departamento, Contatos_emergencia, 
+Paciente, Usuario 
+CASCADE;
+
 CREATE TABLE Doacao (
   id SERIAL PRIMARY KEY,
   title VARCHAR NOT NULL,
   descricao VARCHAR NOT NULL UNIQUE,
   imagem VARCHAR NOT NULL
+);
+
+CREATE TABLE Usuario(
+  id SERIAL PRIMARY KEY,
+  nome VARCHAR NOT NULL,
+  login VARCHAR NOT NULL,
+  senha VARCHAR NOT NULL,
+  imagem VARCHAR NOT NULL
+);
+
+CREATE TABLE Instituicao(
+  id_instituicao SERIAL NOT NULL UNIQUE,
+  descricao VARCHAR NOT NULL,
+  telefone INT NOT NULL,
+  endereco VARCHAR NOT NULL,
+  FOREIGN key (id_instituicao) references Usuario(id)
+);
+
+CREATE TABLE Campanha(
+  id SERIAL PRIMARY KEY,
+  nome VARCHAR NOT NULL,
+  descricao VARCHAR NOT NULL,
+  id_instituicao SERIAL NOT NULL UNIQUE,
+  status VARCHAR not null,
+  FOREIGN key (id_instituicao) references Instituicao(id_instituicao)
 );

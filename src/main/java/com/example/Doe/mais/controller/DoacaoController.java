@@ -2,11 +2,10 @@ package com.example.Doe.mais.controller;
 
 import com.example.Doe.mais.doacao.Doacao;
 import com.example.Doe.mais.doacao.DoacaoRepository;
+import com.example.Doe.mais.food.DoacaoRequestDTO;
 import com.example.Doe.mais.food.DoacaoResponseDTO;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -17,7 +16,15 @@ public class DoacaoController {
     @Autowired
     private DoacaoRepository repository;
 
-    public void saveDoaco(){}
+    @CrossOrigin(origins = "*", allowedHeaders = "*")
+
+    @PostMapping
+    public void saveDoacao(@RequestBody DoacaoRequestDTO data){
+        Doacao doacaoData = new Doacao(data);
+        repository.save(doacaoData);
+
+        return;
+    }
 
 
     @GetMapping
