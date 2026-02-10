@@ -1,15 +1,16 @@
 package com.example.Doe.mais.usuario;
 
 
-//import com.example.Doe.mais.food.UsuarioRequestDTO;
+import com.example.Doe.mais.food.UsuarioRequestDTO;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-//@Table(name = "usuario")
+@Table(name = "usuario")
 @Entity(name = "usuario")
+@Inheritance(strategy = InheritanceType.JOINED)
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
