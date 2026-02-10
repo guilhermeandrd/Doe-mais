@@ -2,7 +2,7 @@ DROP TABLE IF EXISTS
 Ficha_Anamnese, Exame, Internacao, Leito, Materiais_Insumos, Medicamento, 
 Consulta, Alerta, Mensagens, Horarios_plantao, Medico, 
 Profissionais_enfermagem, Departamento, Contatos_emergencia, 
-Paciente, Usuario 
+Paciente, Usuario, Doacao, Instituicao, Campanha
 CASCADE;
 
 CREATE TABLE Doacao (
@@ -21,18 +21,18 @@ CREATE TABLE Usuario(
 );
 
 CREATE TABLE Instituicao(
-  id_instituicao SERIAL NOT NULL UNIQUE,
+  id INT PRIMARY KEY,
   descricao VARCHAR NOT NULL,
   telefone INT NOT NULL,
   endereco VARCHAR NOT NULL,
-  FOREIGN key (id_instituicao) references Usuario(id)
+  FOREIGN key (id) references Usuario(id)
 );
 
 CREATE TABLE Campanha(
   id SERIAL PRIMARY KEY,
   nome VARCHAR NOT NULL,
   descricao VARCHAR NOT NULL,
-  id_instituicao SERIAL NOT NULL UNIQUE,
+  id_instituicao INT NOT NULL,
   status VARCHAR not null,
-  FOREIGN key (id_instituicao) references Instituicao(id_instituicao)
+  FOREIGN key (id_instituicao) references Instituicao(id)
 );

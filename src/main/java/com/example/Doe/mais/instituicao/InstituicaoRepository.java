@@ -1,4 +1,6 @@
 package com.example.Doe.mais.instituicao;
 
-public interface InstituicaoRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface InstituicaoRepository extends JpaRepository<Instituicao, Long> {
 }

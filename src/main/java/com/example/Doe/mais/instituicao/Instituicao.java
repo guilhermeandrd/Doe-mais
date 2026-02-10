@@ -1,5 +1,6 @@
 package com.example.Doe.mais.instituicao;
 
+import com.example.Doe.mais.food.InstituicaoRequestDTO;
 import com.example.Doe.mais.usuario.Usuario;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -14,11 +15,19 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @EqualsAndHashCode
 public class Instituicao extends Usuario {
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
     private String descricao;
     private int telefone;
     private String endereco;
 
-    
+    public Instituicao(InstituicaoRequestDTO data){
+        this.setNome(data.nome());
+        this.setLogin(data.login());
+        this.setSenha(data.senha());
+        this.setEmail(data.email());
+        this.setImagem(data.imagem());
+        this.descricao = data.descricao();
+        this.telefone = data.telefone();
+        this.endereco = data.endereco();
+    }
+
 }

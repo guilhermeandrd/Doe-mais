@@ -22,8 +22,6 @@ public class DoacaoController {
     public void saveDoacao(@RequestBody DoacaoRequestDTO data){
         Doacao doacaoData = new Doacao(data);
         repository.save(doacaoData);
-
-        return;
     }
 
 

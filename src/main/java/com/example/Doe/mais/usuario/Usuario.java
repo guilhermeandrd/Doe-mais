@@ -1,17 +1,14 @@
 package com.example.Doe.mais.usuario;
 
 
-import com.example.Doe.mais.food.UsuarioRequestDTO;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 @Table(name = "usuario")
 @Entity(name = "usuario")
 @Inheritance(strategy = InheritanceType.JOINED)
 @Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode
@@ -21,6 +18,7 @@ public abstract class Usuario {
     private Long id;
     private String nome;
     private String login;
+    private String senha;
     private String email;
-    private String image;
+    private String imagem;
 }
