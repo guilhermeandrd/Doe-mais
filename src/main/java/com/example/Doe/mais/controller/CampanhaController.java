@@ -1,10 +1,10 @@
 package com.example.Doe.mais.controller;
 
 
-import com.example.Doe.mais.campanha.Campanha;
-import com.example.Doe.mais.campanha.CampanhaRepository;
-import com.example.Doe.mais.food.CampanhaRequestDTO;
-import com.example.Doe.mais.food.CampanhaResponseDTO;
+import com.example.Doe.mais.entity.Campanha;
+import com.example.Doe.mais.repository.CampanhaRepository;
+import com.example.Doe.mais.dto.CampanhaRequestDTO;
+import com.example.Doe.mais.dto.CampanhaResponseDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

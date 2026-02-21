@@ -1,9 +1,9 @@
 package com.example.Doe.mais.controller;
 
-import com.example.Doe.mais.doacao.Doacao;
-import com.example.Doe.mais.doacao.DoacaoRepository;
-import com.example.Doe.mais.food.DoacaoRequestDTO;
-import com.example.Doe.mais.food.DoacaoResponseDTO;
+import com.example.Doe.mais.repository.DoacaoRepository;
+import com.example.Doe.mais.entity.Doacao;
+import com.example.Doe.mais.dto.DoacaoRequestDTO;
+import com.example.Doe.mais.dto.DoacaoResponseDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

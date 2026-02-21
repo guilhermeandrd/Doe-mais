@@ -1,11 +1,12 @@
-package com.example.Doe.mais.doacao;
+package com.example.Doe.mais.entity;
 
-import com.example.Doe.mais.food.DoacaoRequestDTO;
+import com.example.Doe.mais.dto.DoacaoRequestDTO;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+
 
 @Table(name = "doacao")
 @Entity(name = "doacao")
@@ -14,7 +15,8 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @EqualsAndHashCode
 public class Doacao {
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String title;
     private String descricao;
@@ -25,5 +27,5 @@ public class Doacao {
         this.descricao = data.descricao();
         this.image = data.image();
     }
-
 }
+

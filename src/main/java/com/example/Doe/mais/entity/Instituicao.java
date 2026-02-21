@@ -1,12 +1,13 @@
-package com.example.Doe.mais.instituicao;
+package com.example.Doe.mais.entity;
 
-import com.example.Doe.mais.food.InstituicaoRequestDTO;
-import com.example.Doe.mais.usuario.Usuario;
+import com.example.Doe.mais.dto.InstituicaoRequestDTO;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+
+import java.util.List;
 
 @Table(name = "instituicao")
 @Entity(name = "instituicao")
@@ -19,6 +20,9 @@ public class Instituicao extends Usuario {
     private int telefone;
     private String endereco;
 
+    @OneToMany(mappedBy = "instituicao")
+    private List<Campanha> campanhas;
+
     public Instituicao(InstituicaoRequestDTO data){
         this.setNome(data.nome());
         this.setLogin(data.login());
@@ -28,6 +32,7 @@ public class Instituicao extends Usuario {
         this.descricao = data.descricao();
         this.telefone = data.telefone();
         this.endereco = data.endereco();
+        this.campanhas = data.campanhas();
     }
 
 }

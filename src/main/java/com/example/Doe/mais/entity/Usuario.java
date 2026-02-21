@@ -1,4 +1,4 @@
-package com.example.Doe.mais.usuario;
+package com.example.Doe.mais.entity;
 
 
 import jakarta.persistence.*;
